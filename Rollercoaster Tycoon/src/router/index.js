@@ -1,23 +1,35 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+// src/router/index.js
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from '@/views/Home.vue';
+import Attractions from '@/views/Attractions.vue';
+import AddAttraction from '@/views/AddAttraction.vue';
+import EditAttraction from '@/views/EditAttraction.vue';
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+Vue.use(Router);
+
+export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'Home',
+      component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      path: '/attractions',
+      name: 'Attractions',
+      component: Attractions
+    },
+    {
+      path: '/attractions/add',
+      name: 'AddAttraction',
+      component: AddAttraction
+    },
+    {
+      path: '/attractions/edit/:id',
+      name: 'EditAttraction',
+      component: EditAttraction
     }
   ]
-})
-
-export default router
+});
