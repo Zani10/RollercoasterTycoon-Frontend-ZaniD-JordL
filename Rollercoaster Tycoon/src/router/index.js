@@ -5,6 +5,9 @@ import Home from '@/views/Home.vue';
 import Attractions from '@/views/Attractions.vue';
 import AddAttraction from '@/views/AddAttraction.vue';
 import EditAttraction from '@/views/EditAttraction.vue';
+import Categories from '@/views/Categories.vue';
+import AddCategory from '@/views/AddCategory.vue';
+import EditCategory from '@/views/EditCategory.vue';
 
 Vue.use(Router);
 
@@ -30,6 +33,21 @@ export default new Router({
       path: '/attractions/edit/:id',
       name: 'EditAttraction',
       component: EditAttraction
+    },
+    {
+      path: '/categories',
+      name: 'Categories',
+      component: Categories
+    },
+    {
+      path: '/categories/add',
+      name: 'AddCategory',
+      component: AddCategory
+    },
+    {
+      path: '/categories/edit/:id',
+      name: 'EditCategory',
+      component: EditCategory
     }
   ]
 });
